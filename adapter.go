@@ -30,14 +30,15 @@ import (
 
 type CasbinRule struct {
 	TablePrefix string `gorm:"-"`
-	TableName	string `gorm:"-"`
-	PType       string `gorm:"size:100"`
-	V0          string `gorm:"size:100"`
-	V1          string `gorm:"size:100"`
-	V2          string `gorm:"size:100"`
-	V3          string `gorm:"size:100"`
-	V4          string `gorm:"size:100"`
-	V5          string `gorm:"size:100"`
+	TableName   string `gorm:"-"`
+	ID			uint   `gorm:"primaryKey"`
+	PType       string `gorm:"size:10;uniqueIndex:unique_index"`
+	V0          string `gorm:"size:40;uniqueIndex:unique_index"`
+	V1          string `gorm:"size:40;uniqueIndex:unique_index"`
+	V2          string `gorm:"size:40;uniqueIndex:unique_index"`
+	V3          string `gorm:"size:40;uniqueIndex:unique_index"`
+	V4          string `gorm:"size:40;uniqueIndex:unique_index"`
+	V5          string `gorm:"size:40;uniqueIndex:unique_index"`
 }
 
 type Filter struct {
